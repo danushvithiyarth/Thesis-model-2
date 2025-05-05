@@ -22,7 +22,7 @@ pipeline {
         stage('Deployment Roll out') {
             steps {
                 script {
-                    sh 'kubectl rollout restart deployment react-app-deployment -n react-app-deployment'
+                    sh 'sudo kubectl rollout restart deployment react-app-deployment -n react-app-deployment'
                 }
             }
         }
