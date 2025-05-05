@@ -19,6 +19,14 @@ pipeline {
             }
         }
 
+        stage('Deployment Roll out') {
+            steps {
+                script {
+                    sh 'kubectl rollout restart deployment react-app-deployment -n react-app-deployment'
+                }
+            }
+        }
+
         stage('Cleanup') {
             steps {
                 script {
