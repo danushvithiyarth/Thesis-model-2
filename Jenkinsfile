@@ -15,13 +15,6 @@ pipeline {
                 script {
                     sh 'docker login -u "danushvithiyarth" -p "$docker_pass" docker.io'
                     sh 'docker push danushvithiyarth/dev:latest'
-                }
-            }
-        }
-
-        stage('Deployment Roll out') {
-            steps {
-                script {
                     sh 'sudo kubectl rollout restart deployment react-app-deployment -n react-app-deployment'
                 }
             }
