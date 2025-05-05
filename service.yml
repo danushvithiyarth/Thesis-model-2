@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: java-app
+    app: react-app
   ports:
     - protocol: TCP
       port: 80
